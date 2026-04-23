@@ -89,17 +89,6 @@ var DIRECTORY_DATA = [
     "showEmail": false,
     "email": ""
   },
-  {
-    "id": 3,
-    "name": "Alumni Member",
-    "chineseName": "",
-    "nickname": "",
-    "year": ["2000"],
-    "form7year": [],
-    "class": ["Form 5A"],
-    "showEmail": false,
-    "email": ""
-  }
 ];
 
 /* ===========================
