@@ -3,37 +3,165 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SJACSOAA — Home</title>
+  <title>SJACSOAA — St. Joseph's Anglo-Chinese School Ontario Alumni Association</title>
+  <meta name="description" content="The St. Joseph's Anglo-Chinese School Ontario Alumni Association connects SJACS graduates living in Ontario, Canada. Join us for events, reunions, and to find old classmates." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header>
-    <div class="site-title">SJACSOAA</div>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="directory.html">Directory</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-    </nav>
+
+  <!-- ===== Navigation ===== -->
+  <header id="navbar" role="banner">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html" aria-label="SJACSOAA — Home">
+        <img src="images/logo.png" alt="SJACSOAA logo" height="40" />
+        <span class="nav-brand-name">SJACSOAA</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="nav-links" class="nav-links" aria-label="Main navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="#events">Events</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="#find-classmate">Find a Classmate</a>
+        <a href="#about">About</a>
+        <a href="#useful-links">Useful Links</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section class="hero">
-      <h1>Welcome</h1>
-      <p>Placeholder — homepage hero content goes here.</p>
+
+    <!-- ===== Hero ===== -->
+    <section id="hero" aria-label="Hero banner">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-content">
+        <span class="hero-chinese">聖若瑟英文中學（安省）同學會</span>
+        <h1>St. Joseph's Anglo-Chinese School Ontario Alumni Association</h1>
+        <p class="hero-tagline">Connecting SJACS alumni across Ontario — Ad Astra</p>
+        <a href="#find-classmate" class="btn">Find a Classmate</a>
+      </div>
     </section>
 
-    <section class="highlights">
-      <h2>Highlights</h2>
-      <p>Placeholder — featured content goes here.</p>
+    <!-- ===== About ===== -->
+    <section id="about" class="section section-white">
+      <div class="section-inner">
+        <h2 class="section-heading">About SJACSOAA</h2>
+        <hr class="section-divider" />
+        <p class="about-text">The St. Joseph's Anglo-Chinese School Ontario Alumni Association (SJACSOAA) was founded by a group of SJACS graduates who had made Ontario, Canada their home. What began as informal gatherings of former classmates has grown into a warm and active community united by shared memories, a common school, and the spirit of &ldquo;Ad Astra.&rdquo; SJACSOAA brings together alumni from across the graduating years, providing a place to reconnect with old friends, celebrate milestones, and keep the SJACS tradition alive in Ontario. We organise annual dinners, festive gatherings, and reunions &mdash; and we welcome every SJACS graduate who finds themselves in this part of the world. Whether you graduated decades ago or more recently, if SJACS is part of your story, SJACSOAA is your home away from home.</p>
+      </div>
     </section>
+
+    <!-- ===== Events ===== -->
+    <section id="events" class="section section-grey">
+      <div class="section-inner">
+        <h2 class="section-heading">Events &amp; Reunions</h2>
+        <hr class="section-divider" />
+        <div id="events-cards" class="card-grid" aria-live="polite">
+          <p>Loading events&hellip;</p>
+        </div>
+        <div class="events-cta">
+          <a href="gallery.html" class="btn">View All Photos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Find a Classmate ===== -->
+    <section id="find-classmate" class="section section-white">
+      <div class="section-inner">
+        <h2 class="section-heading">Find a Classmate</h2>
+        <hr class="section-divider" />
+        <p class="find-classmate-text">Looking for a fellow SJACS graduate? Browse our alumni directory to find classmates by graduating year. To protect privacy, contact details are routed through the association &mdash; we&rsquo;ll pass your message along.</p>
+        <a href="directory.html" class="btn">Browse the Directory</a>
+      </div>
+    </section>
+
+    <!-- ===== Useful Links ===== -->
+    <section id="useful-links" class="section section-grey">
+      <div class="section-inner">
+        <h2 class="section-heading">Useful Links</h2>
+        <hr class="section-divider" />
+        <div class="links-grid">
+          <div class="links-card">
+            <h3>Our School</h3>
+            <ul>
+              <li><a href="https://www.sjacs.edu.hk/" target="_blank" rel="noopener noreferrer">SJACS</a></li>
+              <li><a href="https://www.sjacps.edu.hk/en/" target="_blank" rel="noopener noreferrer">SJACS Primary School</a></li>
+              <li><a href="https://www.bpsf.org.hk/" target="_blank" rel="noopener noreferrer">Brother Paul Sun Education Foundation</a></li>
+            </ul>
+          </div>
+          <div class="links-card">
+            <h3>SJACS Alumni Worldwide</h3>
+            <ul>
+              <li><a href="https://www.sjacs.com/" target="_blank" rel="noopener noreferrer">Old Boys' Association (Hong Kong)</a></li>
+              <li><a href="https://www.sjacs-van.com/" target="_blank" rel="noopener noreferrer">SJACS Vancouver</a></li>
+              <li><a href="https://hkjsaa.blogspot.com/" target="_blank" rel="noopener noreferrer">HK Joint Schools Alumni Association</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact" class="section section-navy">
+      <div class="section-inner">
+        <h2 class="section-heading">Get Involved</h2>
+        <hr class="section-divider" />
+        <div class="contact-blocks">
+          <div class="contact-block">
+            <span class="contact-block-icon" aria-hidden="true">&#9733;</span>
+            <h3>Join SJACSOAA</h3>
+            <p>If you&rsquo;re a SJACS graduate living in Ontario, we&rsquo;d love to have you as a member. Reach out and introduce yourself.</p>
+          </div>
+          <div class="contact-block">
+            <span class="contact-block-icon" aria-hidden="true">&#128247;</span>
+            <h3>Share Your Photos</h3>
+            <p>Have photos from your school days or alumni events? We&rsquo;d love to add them to our archive.</p>
+          </div>
+          <div class="contact-block">
+            <span class="contact-block-icon" aria-hidden="true">&#127881;</span>
+            <h3>Organise an Event</h3>
+            <p>Have an idea for a reunion or gathering? Get in touch and let&rsquo;s make it happen.</p>
+          </div>
+        </div>
+        <p class="contact-email">Reach us at <a href="mailto:sjacsoaa.ca@gmail.com">sjacsoaa.ca@gmail.com</a></p>
+      </div>
+    </section>
+
   </main>
 
+  <!-- ===== Footer ===== -->
   <footer>
-    <p>&copy; 2026 SJACSOAA. All rights reserved.</p>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="SJACSOAA logo" />
+        <span class="footer-brand-name-en">St. Joseph's Anglo-Chinese School Ontario Alumni Association</span>
+        <span class="footer-brand-name-zh">聖若瑟英文中學（安省）同學會</span>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="#useful-links">Useful Links</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><a href="mailto:sjacsoaa.ca@gmail.com">sjacsoaa.ca@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 SJACSOAA &mdash; St. Joseph&rsquo;s Anglo-Chinese School Ontario Alumni Association. All rights reserved.</p>
+    </div>
   </footer>
 
   <script src="js/main.js"></script>

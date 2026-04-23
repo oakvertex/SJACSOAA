@@ -3,37 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SJACSOAA — Alumni Directory</title>
+  <title>Alumni Directory — SJACSOAA</title>
+  <meta name="description" content="Browse SJACS alumni in Ontario by Form 5 year. Find classmates and connect through SJACSOAA." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header>
-    <div class="site-title">SJACSOAA</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="directory.html" class="active">Directory</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-    </nav>
+
+  <!-- ===== Navigation ===== -->
+  <header id="navbar" role="banner">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html" aria-label="SJACSOAA — Home">
+        <img src="images/logo.png" alt="SJACSOAA logo" height="40" />
+        <span class="nav-brand-name">SJACSOAA</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="nav-links" class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#events">Events</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="directory.html" class="active">Find a Classmate</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#useful-links">Useful Links</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <h1>Alumni Directory</h1>
 
-    <div class="search-bar">
-      <input type="text" id="search" placeholder="Search alumni…" />
-    </div>
+    <!-- ===== Page Hero ===== -->
+    <section class="page-hero">
+      <h1>Alumni Directory</h1>
+      <p>Browse SJACS alumni in Ontario by Form 5 year. To protect privacy, personal contact details are not displayed publicly. Use the Connect button to send a message via SJACSOAA.</p>
+    </section>
 
-    <div id="directory-list">
-      <p>Placeholder — alumni entries will be rendered here from data/directory.json.</p>
-    </div>
+    <!-- ===== Directory ===== -->
+    <section class="section section-white">
+      <div class="section-inner">
+        <h2 class="section-heading">Browse by Form 5 Year</h2>
+        <div id="year-filters" class="year-filters" aria-label="Browse by Form 5 Year" role="group">
+          <p>Loading filters&hellip;</p>
+        </div>
+        <div id="directory" aria-live="polite">
+          <p>Loading directory&hellip;</p>
+        </div>
+      </div>
+    </section>
+
   </main>
 
+  <!-- ===== Footer ===== -->
   <footer>
-    <p>&copy; 2026 SJACSOAA. All rights reserved.</p>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="SJACSOAA logo" />
+        <span class="footer-brand-name-en">St. Joseph's Anglo-Chinese School Ontario Alumni Association</span>
+        <span class="footer-brand-name-zh">聖若瑟英文中學（安省）同學會</span>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#events">Events</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="index.html#useful-links">Useful Links</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><a href="mailto:sjacsoaa.ca@gmail.com">sjacsoaa.ca@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 SJACSOAA &mdash; St. Joseph&rsquo;s Anglo-Chinese School Ontario Alumni Association. All rights reserved.</p>
+    </div>
   </footer>
 
   <script src="js/main.js"></script>

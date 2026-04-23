@@ -1,1 +1,35 @@
-[]
+[
+  {
+    "id": 1,
+    "name": "Yim, Ngok Hon",
+    "chineseName": "嚴岳翰",
+    "nickname": "Pizza",
+    "year": ["1985"],
+    "form7year": ["1987"],
+    "class": ["Form 5E"],
+    "showEmail": false,
+    "email": ""
+  },
+  {
+    "id": 2,
+    "name": "Simon So",
+    "chineseName": "蘇丞尉",
+    "nickname": "薯蘇",
+    "year": ["1986"],
+    "form7year": [],
+    "class": ["Form 5B"],
+    "showEmail": false,
+    "email": ""
+  },
+  {
+    "id": 3,
+    "name": "Alumni Member",
+    "chineseName": "",
+    "nickname": "",
+    "year": ["2000"],
+    "form7year": [],
+    "class": ["Form 5A"],
+    "showEmail": false,
+    "email": ""
+  }
+]
