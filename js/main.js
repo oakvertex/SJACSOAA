@@ -167,10 +167,54 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ===========================
-     Gallery rendering (gallery.html)
+     Gallery rendering + lightbox (gallery.html)
      =========================== */
   var galleryGrid = document.getElementById('gallery-grid');
   if (galleryGrid) {
+
+    /* --- Lightbox setup --- */
+    var lightbox = document.createElement('div');
+    lightbox.className = 'lightbox';
+    lightbox.setAttribute('role', 'dialog');
+    lightbox.setAttribute('aria-modal', 'true');
+    lightbox.setAttribute('aria-label', 'Photo viewer');
+    lightbox.innerHTML =
+      '<button class="lightbox-close" id="lightbox-close" aria-label="Close photo viewer">×</button>' +
+      '<img class="lightbox-img" id="lightbox-img" src="" alt="" />';
+    document.body.appendChild(lightbox);
+
+    var lbImg        = document.getElementById('lightbox-img');
+    var lbClose      = document.getElementById('lightbox-close');
+    var lbPrevFocus  = null;
+
+    function openLightbox(src, alt) {
+      lbImg.src = src;
+      lbImg.alt = alt;
+      lbPrevFocus = document.activeElement;
+      lightbox.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      lbClose.focus();
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      document.body.style.overflow = '';
+      lbImg.src = '';
+      if (lbPrevFocus) lbPrevFocus.focus();
+    }
+
+    lbClose.addEventListener('click', closeLightbox);
+
+    /* Click on dark backdrop (not the image) closes the overlay */
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+    });
+
+    /* --- Render cards --- */
     if (!EVENTS_DATA || EVENTS_DATA.length === 0) {
       galleryGrid.innerHTML = '<p>No photos to display at this time.</p>';
     } else {
@@ -187,13 +231,17 @@ document.addEventListener('DOMContentLoaded', function () {
             '<h3>' + escHtml(ev.title) + '</h3>' +
             '<p class="card-date">' + escHtml(ev.date) + '</p>' +
           '</div>';
-        var img = article.querySelector('img');
+        var img     = article.querySelector('img');
+        var imgWrap = article.querySelector('.card-img-wrap');
         img.addEventListener('load', function () {
           var ph = article.querySelector('.photo-placeholder');
           if (ph) ph.style.display = 'none';
         });
         img.addEventListener('error', function () {
           img.classList.add('broken');
+        });
+        imgWrap.addEventListener('click', function () {
+          if (!img.classList.contains('broken')) openLightbox(img.src, img.alt);
         });
         galleryGrid.appendChild(article);
       });
