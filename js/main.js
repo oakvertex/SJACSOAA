@@ -89,6 +89,17 @@ var DIRECTORY_DATA = [
     "showEmail": false,
     "email": ""
   },
+  {
+    "id": 3,
+    "name": "John Kwong Yuen Chan",
+    "chineseName": "陳廣源",
+    "nickname": "",
+    "year": ["1970"],
+    "form7year": [],
+    "class": ["Form 5C"],
+    "showEmail": false,
+    "email": ""
+  }
 ];
 
 /* ===========================
