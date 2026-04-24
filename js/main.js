@@ -69,7 +69,7 @@ var EVENTS_DATA = [
 var DIRECTORY_DATA = [
   {
     "id": 1,
-    "name": "Yim, Ngok Hon",
+    "name": "N.H. Yim",
     "chineseName": "嚴岳翰",
     "nickname": "Pizza",
     "year": ["1985"],
@@ -97,6 +97,17 @@ var DIRECTORY_DATA = [
     "year": ["1970"],
     "form7year": [],
     "class": ["Form 5C"],
+    "showEmail": false,
+    "email": ""
+  },
+  {
+    "id": 4,
+    "name": "Martin Chai, Wen-Hsuan",
+    "chineseName": "翟文軒",
+    "nickname": "",
+    "year": ["1988"],
+    "form7year": [],
+    "class": ["Form 5D"],
     "showEmail": false,
     "email": ""
   }
