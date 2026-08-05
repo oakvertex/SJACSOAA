@@ -775,6 +775,103 @@ footer {
   outline-offset: 3px;
 }
 
+.lightbox-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.55);
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  color: var(--color-white);
+  font-size: 1.8rem;
+  line-height: 1;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2001;
+  transition: background 0.15s, border-color 0.15s;
+  font-family: var(--font-body);
+}
+
+.lightbox-nav:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.lightbox-nav:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+.lightbox-nav[hidden] {
+  display: none;
+}
+
+.lightbox-prev {
+  left: 1rem;
+}
+
+.lightbox-next {
+  right: 1rem;
+}
+
+.lightbox-caption {
+  position: fixed;
+  left: 50%;
+  bottom: 3.25rem;
+  transform: translateX(-50%);
+  max-width: 90vw;
+  margin: 0;
+  padding: 0.4rem 1rem;
+  background: rgba(0, 0, 0, 0.55);
+  color: var(--color-white);
+  font-size: var(--fs-sm);
+  text-align: center;
+  border-radius: var(--radius-sm);
+  z-index: 2001;
+}
+
+.lightbox-caption[hidden] {
+  display: none;
+}
+
+.lightbox-counter {
+  position: fixed;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 0.3rem 0.9rem;
+  background: rgba(0, 0, 0, 0.55);
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  color: var(--color-white);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  border-radius: 999px;
+  z-index: 2001;
+}
+
+.lightbox-counter[hidden] {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .lightbox-nav {
+    width: 2.25rem;
+    height: 2.25rem;
+    font-size: 1.4rem;
+  }
+  .lightbox-prev {
+    left: 0.4rem;
+  }
+  .lightbox-next {
+    right: 0.4rem;
+  }
+}
+
 /* ===========================
    Directory page
    =========================== */

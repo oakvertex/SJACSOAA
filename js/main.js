@@ -35,12 +35,73 @@
    =========================== */
 var EVENTS_DATA = [
   {
+    "id": "golf-tournament-2026",
+    "title": "Golf Tournament 2026",
+    "subtitle": "Hong Kong Joint Schools Alumni Association",
+    "date": "26 July 2026",
+    "dateISO": "2026-07-26",
+    "photos": [
+      {
+        "image": "images/events/golf-tournament-2026/golf-tournament-2026-team-tee.jpg",
+        "alt": "The SJACS Alumni team of four — Johnson Yim, William Chow, Joe Chow and Eric Law, left to right — on the tee at Upper Unionville Golf Club",
+        "caption": "The SJACS Alumni team, left to right: Johnson Yim, William Chow, Joe Chow, Eric Law"
+      },
+      {
+        "image": "images/events/golf-tournament-2026/golf-tournament-2026-group-course.jpg",
+        "alt": "Golfers and alumni gathered outside the clubhouse at Upper Unionville Golf Club for the HKJSAA Golf Tournament 2026",
+        "caption": "Tournament day at Upper Unionville Golf Club"
+      },
+      {
+        "image": "images/events/golf-tournament-2026/golf-tournament-2026-alumni-dinner-stage.jpg",
+        "alt": "SJACS Alumni Association members on stage at the HKJSAA Golf Tournament 2026 dinner and award presentation",
+        "caption": "SJACS Alumni Association at the dinner and award presentation"
+      },
+      {
+        "image": "images/events/golf-tournament-2026/golf-tournament-2026-dinner-table.jpg",
+        "alt": "Alumni sharing dinner at Purple Orchid following the HKJSAA Golf Tournament 2026",
+        "caption": "Dinner at Purple Orchid"
+      },
+      {
+        "image": "images/events/golf-tournament-2026/golf-tournament-2026-award-strokeplay.jpg",
+        "alt": "Eric Law receiving the Individual Strokeplay 1st Runner-up award at the HKJSAA Golf Tournament 2026",
+        "caption": "Eric Law — Individual Strokeplay, 1st Runner-up"
+      },
+      {
+        "image": "images/events/golf-tournament-2026/golf-tournament-2026-award-honest-reaction.jpg",
+        "alt": "William Chow celebrating after being announced the Honest Individual Strokeplay Player award winner at the HKJSAA Golf Tournament 2026",
+        "caption": "William Chow celebrates his Honest Individual Strokeplay Player award"
+      },
+      {
+        "image": "images/events/golf-tournament-2026/golf-tournament-2026-award-honest.jpg",
+        "alt": "William Chow receiving the Honest Individual Strokeplay Player award at the HKJSAA Golf Tournament 2026",
+        "caption": "William Chow — Honest Individual Strokeplay Player"
+      },
+      {
+        "image": "images/events/golf-tournament-2026/golf-tournament-2026-award-closest-to-pin.jpg",
+        "alt": "Eric Law receiving the Closest to Pin award for Hole 16 at the HKJSAA Golf Tournament 2026",
+        "caption": "Eric Law — Closest to Pin, Hole 16"
+      },
+      {
+        "image": "images/events/golf-tournament-2026/golf-tournament-2026-all-winners.jpg",
+        "alt": "All award winners on stage at the HKJSAA Golf Tournament 2026 award presentation at Purple Orchid",
+        "caption": "All award winners, HKJSAA Golf Tournament 2026"
+      }
+    ],
+    "description": "SJACS Alumni fielded a team of four — William Chow, Joe Chow, Eric Law and Johnson Yim — at the tournament, held at Upper Unionville Golf Club with dinner and the award presentation that evening at Purple Orchid. The team earned three individual awards: Eric Law (Individual Strokeplay, 1st Runner-up; Closest to Pin, Hole 16) and William Chow (Honest Individual Strokeplay Player).",
+    "upcoming": false
+  },
+  {
     "id": "cny-2026",
     "title": "CNY Celebration 2026",
     "subtitle": "Hong Kong Joint Schools Alumni Association",
     "date": "2026",
     "dateISO": "2026-01-01",
-    "photo": "images/events/cny-2026.jpg",
+    "photos": [
+      {
+        "image": "images/events/cny-2026.jpg",
+        "alt": "CNY Celebration 2026 group photo"
+      }
+    ],
     "description": "SJACSOAA joined the Hong Kong Joint Schools Alumni Association's Chinese New Year celebration.",
     "upcoming": false
   },
@@ -50,7 +111,12 @@ var EVENTS_DATA = [
     "subtitle": "",
     "date": "18 October 2025",
     "dateISO": "2025-10-18",
-    "photo": "images/events/agm-2025.jpg",
+    "photos": [
+      {
+        "image": "images/events/agm-2025.jpg",
+        "alt": "SJACSOAA AGM Dinner group photo"
+      }
+    ],
     "description": "Our annual general meeting and dinner, bringing SJACS alumni together across graduating years.",
     "upcoming": false
   },
@@ -60,7 +126,12 @@ var EVENTS_DATA = [
     "subtitle": "",
     "date": "27 October 2024",
     "dateISO": "2024-10-27",
-    "photo": "images/events/agm-2024.jpg",
+    "photos": [
+      {
+        "image": "images/events/agm-2024.jpg",
+        "alt": "SJACSOAA AGM Dinner group photo"
+      }
+    ],
     "description": "Our annual general meeting and dinner, bringing SJACS alumni together across graduating years.",
     "upcoming": false
   }
@@ -150,12 +221,13 @@ document.addEventListener('DOMContentLoaded', function () {
       recentEvents.forEach(function (ev) {
         var article = document.createElement('article');
         article.className = 'card';
+        var thumb = (ev.photos && ev.photos[0]) || {};
         var subtitle = ev.subtitle
           ? '<p class="card-subtitle">' + escHtml(ev.subtitle) + '</p>'
           : '';
         article.innerHTML =
           '<div class="card-img-wrap">' +
-            '<img src="' + escHtml(ev.photo) + '" alt="' + escHtml(ev.title) + ' group photo" loading="lazy">' +
+            '<img src="' + escHtml(thumb.image) + '" alt="' + escHtml(thumb.alt || ev.title) + '" loading="lazy">' +
             '<div class="photo-placeholder" aria-hidden="true">Photo coming soon</div>' +
           '</div>' +
           '<div class="card-body">' +
@@ -191,16 +263,64 @@ document.addEventListener('DOMContentLoaded', function () {
     lightbox.setAttribute('aria-label', 'Photo viewer');
     lightbox.innerHTML =
       '<button class="lightbox-close" id="lightbox-close" aria-label="Close photo viewer">×</button>' +
-      '<img class="lightbox-img" id="lightbox-img" src="" alt="" />';
+      '<button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous photo">&#8249;</button>' +
+      '<img class="lightbox-img" id="lightbox-img" src="" alt="" />' +
+      '<button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next photo">&#8250;</button>' +
+      '<p class="lightbox-caption" id="lightbox-caption"></p>' +
+      '<p class="lightbox-counter" id="lightbox-counter"></p>';
     document.body.appendChild(lightbox);
 
     var lbImg        = document.getElementById('lightbox-img');
     var lbClose      = document.getElementById('lightbox-close');
+    var lbPrev       = document.getElementById('lightbox-prev');
+    var lbNext       = document.getElementById('lightbox-next');
+    var lbCaption    = document.getElementById('lightbox-caption');
+    var lbCounter    = document.getElementById('lightbox-counter');
     var lbPrevFocus  = null;
+    var lbPhotos     = [];
+    var lbIndex      = 0;
 
-    function openLightbox(src, alt) {
-      lbImg.src = src;
-      lbImg.alt = alt;
+    function renderLightboxPhoto() {
+      var photo = lbPhotos[lbIndex] || {};
+      lbImg.src = photo.image || '';
+      lbImg.alt = photo.alt || '';
+
+      if (photo.caption) {
+        lbCaption.textContent = photo.caption;
+        lbCaption.hidden = false;
+      } else {
+        lbCaption.textContent = '';
+        lbCaption.hidden = true;
+      }
+
+      var multi = lbPhotos.length > 1;
+      lbPrev.hidden = !multi;
+      lbNext.hidden = !multi;
+      if (multi) {
+        lbCounter.textContent = (lbIndex + 1) + ' / ' + lbPhotos.length;
+        lbCounter.hidden = false;
+      } else {
+        lbCounter.textContent = '';
+        lbCounter.hidden = true;
+      }
+    }
+
+    function showPrevPhoto() {
+      if (lbPhotos.length < 2) return;
+      lbIndex = (lbIndex - 1 + lbPhotos.length) % lbPhotos.length;
+      renderLightboxPhoto();
+    }
+
+    function showNextPhoto() {
+      if (lbPhotos.length < 2) return;
+      lbIndex = (lbIndex + 1) % lbPhotos.length;
+      renderLightboxPhoto();
+    }
+
+    function openLightbox(photos, startIndex) {
+      lbPhotos = photos || [];
+      lbIndex = startIndex || 0;
+      renderLightboxPhoto();
       lbPrevFocus = document.activeElement;
       lightbox.classList.add('is-open');
       document.body.style.overflow = 'hidden';
@@ -211,18 +331,25 @@ document.addEventListener('DOMContentLoaded', function () {
       lightbox.classList.remove('is-open');
       document.body.style.overflow = '';
       lbImg.src = '';
+      lbPhotos = [];
+      lbIndex = 0;
       if (lbPrevFocus) lbPrevFocus.focus();
     }
 
     lbClose.addEventListener('click', closeLightbox);
+    lbPrev.addEventListener('click', function (e) { e.stopPropagation(); showPrevPhoto(); });
+    lbNext.addEventListener('click', function (e) { e.stopPropagation(); showNextPhoto(); });
 
-    /* Click on dark backdrop (not the image) closes the overlay */
+    /* Click on dark backdrop (not the image or controls) closes the overlay */
     lightbox.addEventListener('click', function (e) {
       if (e.target === lightbox) closeLightbox();
     });
 
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+      if (!lightbox.classList.contains('is-open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      else if (e.key === 'ArrowLeft') showPrevPhoto();
+      else if (e.key === 'ArrowRight') showNextPhoto();
     });
 
     /* --- Render cards --- */
@@ -231,11 +358,13 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       galleryGrid.innerHTML = '';
       EVENTS_DATA.forEach(function (ev) {
+        var photos = ev.photos || [];
+        var thumb  = photos[0] || {};
         var article = document.createElement('article');
         article.className = 'gallery-card';
         article.innerHTML =
           '<div class="card-img-wrap">' +
-            '<img src="' + escHtml(ev.photo) + '" alt="' + escHtml(ev.title) + ' group photo" loading="lazy">' +
+            '<img src="' + escHtml(thumb.image) + '" alt="' + escHtml(thumb.alt || ev.title) + '" loading="lazy">' +
             '<div class="photo-placeholder" aria-hidden="true">Photo coming soon</div>' +
           '</div>' +
           '<div class="gallery-card-body">' +
@@ -252,7 +381,7 @@ document.addEventListener('DOMContentLoaded', function () {
           img.classList.add('broken');
         });
         imgWrap.addEventListener('click', function () {
-          if (!img.classList.contains('broken')) openLightbox(img.src, img.alt);
+          if (!img.classList.contains('broken')) openLightbox(photos, 0);
         });
         galleryGrid.appendChild(article);
       });

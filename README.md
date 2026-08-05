@@ -6,18 +6,15 @@ Static website for the SJACSOAA alumni association. Built with plain HTML, CSS, 
 
 | File | Description |
 |------|-------------|
-| `index.html` | Homepage |
+| `index.html` | Homepage, including upcoming events |
 | `directory.html` | Searchable alumni directory |
-| `events.html` | Upcoming events and reunions |
 | `gallery.html` | Photo gallery |
-| `about.html` | About the organization and contact form |
 
 ## Data
 
-JSON files under `data/` are loaded at runtime by `js/main.js`:
+There's no `fetch()` or build step — event and directory records are hardcoded directly in `js/main.js` as the `EVENTS_DATA` and `DIRECTORY_DATA` arrays, which is the single source of truth for both. To add or edit an event or alumni record, edit that file.
 
-- `data/directory.json` — alumni records
-- `data/events.json` — event listings
+`data/directory.json` is a hand-maintained mirror of `DIRECTORY_DATA` kept for reference; it isn't loaded by the site.
 
 ## Development
 
