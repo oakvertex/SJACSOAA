@@ -35,6 +35,52 @@
    =========================== */
 var EVENTS_DATA = [
   {
+    "id": "new-horizon-2026",
+    "title": "New Horizon Charity Table Tennis Tournament 2026",
+    "subtitle": "Canada-HK New Horizon Lions Club — 15th Annual Charity Table Tennis Tournament",
+    "date": "9 August 2026",
+    "dateISO": "2026-08-09",
+    "photos": [
+      {
+        "image": "images/events/new-horizon-2026-tournament-action.jpg",
+        "alt": "SJACS Alumni in action at the New Horizon Charity Table Tennis Tournament 2026",
+        "caption": "Tournament action"
+      },
+      {
+        "image": "images/events/new-horizon-2026-round-robin-scoreboard.jpg",
+        "alt": "Round-robin scoreboard at the New Horizon Charity Table Tennis Tournament 2026",
+        "caption": "Round-robin play"
+      },
+      {
+        "image": "images/events/new-horizon-2026-team-between-matches.jpg",
+        "alt": "SJACS Alumni team pairing up between matches at the New Horizon Charity Table Tennis Tournament 2026",
+        "caption": "Pairing up between matches"
+      },
+      {
+        "image": "images/events/new-horizon-2026-vs-raimondi-action.jpg",
+        "alt": "SJACS Alumni in action against Raimondi College at the New Horizon Charity Table Tennis Tournament 2026",
+        "caption": "Action vs. Raimondi College"
+      },
+      {
+        "image": "images/events/new-horizon-2026-trophy-table.jpg",
+        "alt": "The trophy table at the New Horizon Charity Table Tennis Tournament 2026",
+        "caption": "The trophy table"
+      },
+      {
+        "image": "images/events/new-horizon-2026-finalists-group-photo.jpg",
+        "alt": "Finalists and organizers at the presentation for the New Horizon Charity Table Tennis Tournament 2026",
+        "caption": "Finalists and organizers at the presentation"
+      },
+      {
+        "image": "images/events/new-horizon-2026-sjacs-silver-medal.jpg",
+        "alt": "SJACS Alumni with their silver medal finish at the New Horizon Charity Table Tennis Tournament 2026",
+        "caption": "SJACS Alumni's silver-medal finish"
+      }
+    ],
+    "description": "Held at Markham Wesley Centre, SJACS Alumni competed in the Inter-School Team event against 7 schools, topping Group B (3-0), winning the semifinal, and reaching the Final — finishing 2nd overall (Silver) after a loss to Wah Yan College.",
+    "upcoming": false
+  },
+  {
     "id": "golf-tournament-2026",
     "title": "Golf Tournament 2026",
     "subtitle": "Hong Kong Joint Schools Alumni Association",
