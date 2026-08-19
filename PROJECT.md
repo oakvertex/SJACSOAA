@@ -197,6 +197,7 @@ sjacsoaa.ca@gmail.com
 | Aug 2026 | Used Pillow instead of ImageMagick for New Horizon 2026 image optimization | ImageMagick unavailable via sudo in this shell session; Pillow reproduced identical settings |
 | Aug 2026 | Trimmed Section 7 from a per-event content mirror to a system-level description | Event content in PROJECT.md was dead duplicate data with the same drift risk as the deleted events.json; js/main.js is now the sole source of truth for event content |
 | Aug 2026 | Trimmed Section 8's per-event photo listing to a system-level description | Same duplicate-content drift risk as Section 7 — EVENTS_DATA is the sole inventory source |
+| Aug 2026 | Removed hardcoded sitemap lastmod date from Section 13 | Same drift risk as Sections 7/8 — the date goes stale every time an event is added and nothing enforces updating this doc |
 
 ---
 
@@ -204,7 +205,7 @@ sjacsoaa.ca@gmail.com
 
 *(As of April 2026 — due for a fresh check given ~4 months have passed)*
 
-Canonical URLs (`/`, `/gallery`, `/directory`) are what's indexed; `.html` variants 307-redirect. Sitemap `lastmod` for `/` and `/gallery` updated to 2026-08-19 alongside the New Horizon 2026 event. See prior watch list re: backlinks from sjacs.com, sjacs-van.com, hkjsaa.blogspot.com if `/gallery` or `/directory` are still showing as under-indexed — worth a fresh Search Console check now that time has passed.
+Canonical URLs (`/`, `/gallery`, `/directory`) are what's indexed; `.html` variants 307-redirect. Sitemap `lastmod` for `/` and `/gallery` is updated with each new event addition — check it's current rather than trusting a date recorded here. See prior watch list re: backlinks from sjacs.com, sjacs-van.com, hkjsaa.blogspot.com if `/gallery` or `/directory` are still showing as under-indexed — worth a fresh Search Console check now that time has passed.
 
 ---
 
