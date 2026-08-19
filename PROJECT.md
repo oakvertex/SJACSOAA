@@ -1,6 +1,6 @@
 # SJACSOAA Website — Project Document
 **St. Joseph's Anglo-Chinese School Ontario Alumni Association**
-**Version 1.8 | August 2026**
+**Version 1.9 | August 2026**
 
 > **Note on this file's history:** As of August 2026, this document was found to exist only as a file uploaded to this Claude Project — it had never been committed to the GitHub repository or its git history. It is now being saved into the repo directly to make git the durable source of truth. Keep this Project's copy in sync by re-uploading after future significant edits.
 
@@ -88,12 +88,15 @@ Separate Pages
 
 | Event | Date | On homepage? |
 |---|---|---|
-| Golf Tournament 2026 — Hong Kong Joint Schools Alumni Association | 26 July 2026 | ✅ (most recent) |
+| New Horizon Charity Table Tennis Tournament 2026 | 9 August 2026 | ✅ (most recent) |
+| Golf Tournament 2026 — Hong Kong Joint Schools Alumni Association | 26 July 2026 | ✅ |
 | CNY Celebration 2026 — Hong Kong Joint Schools Alumni Association | 2026 | ✅ |
-| SJACSOAA AGM Dinner | 18 October 2025 | ✅ |
+| SJACSOAA AGM Dinner | 18 October 2025 | ❌ (gallery only — bumped by the 3-most-recent rule) |
 | SJACSOAA AGM Dinner | 27 October 2024 | ❌ (gallery only — bumped by the 3-most-recent rule) |
 
 **Golf Tournament 2026 detail:** Held at Upper Unionville Golf Club, with dinner and award presentation at Purple Orchid the same evening. SJACS Alumni fielded a team of four — William Chow, Joe Chow, Eric Law and Johnson Yim. Results: Eric Law (Individual Strokeplay, 1st Runner-up; Closest to Pin, Hole 16), William Chow (Honest Individual Strokeplay Player). 9 photos.
+
+**New Horizon 2026 detail:** Held at Markham Wesley Centre (22 Esna Park Drive), the Canada-HK New Horizon Lions Club's 15th Annual Charity Table Tennis Tournament. SJACS Alumni competed in the Inter-School Team event against 7 schools, topped Group B (3-0), won the semifinal, and reached the Final — finishing 2nd overall (Silver) after a loss to Wah Yan College. 7 photos.
 
 ### Gallery: Multi-Photo Events
 Each event can now have one or more photos, shown via a paging lightbox (prev/next buttons, arrow-key navigation, "N / M" counter, optional per-photo caption). Homepage event cards always show `photos[0]` as the thumbnail. Events with a single photo behave exactly as before — no visible change for CNY 2026 or the AGM Dinners.
@@ -146,7 +149,7 @@ sjacsoaa.ca@gmail.com
 |---|---|
 | Hero image | ✅ `images/hero.jpg` |
 | School logo / crest | ✅ `images/logo.png` (official) |
-| Event photos | ✅ `images/events/` — CNY 2026, AGM 2025, AGM 2024, Golf Tournament 2026 (9 photos) |
+| Event photos | ✅ `images/events/` — CNY 2026, AGM 2025, AGM 2024, Golf Tournament 2026 (9 photos), New Horizon 2026 (7 photos) |
 
 ---
 
@@ -173,6 +176,8 @@ sjacsoaa.ca@gmail.com
 | Single maintainer | Static site with no dependencies |
 | No WebP / srcset pipeline | Not currently needed — event photos already sized appropriately (~1400px, 300–500KB); revisit if page-weight becomes an issue |
 | This decision log previously existed only in Claude Project knowledge, not in git | Being committed to the repo as of this version |
+| Homepage "most recent 3" events logic confirmed fully automatic: sorted by dateISO descending, no manual per-event flags exist | N/A — resolved; no mitigation needed |
+| ImageMagick unavailable in local shell (sudo couldn't prompt for a password) | Pillow used as an equivalent substitute for the New Horizon 2026 images — same settings (≤1400px, no upscaling, strip metadata, 4:2:0 chroma, quality 84); revisit whether to fix ImageMagick access or standardize on Pillow |
 
 ---
 
@@ -183,6 +188,7 @@ sjacsoaa.ca@gmail.com
 | M1–M7 (setup through SEO hardening) | ✅ Done |
 | M8 — Gallery extended to multi-photo events; Golf Tournament 2026 added | ✅ Done |
 | M9 — `data/events.json` removed, README corrected | ✅ Done |
+| M10 — New Horizon Charity Table Tennis Tournament 2026 added (7 photos); homepage auto-ordering confirmed | ✅ Done |
 | Board directory entries collected | 🔄 In progress |
 | Wider membership directory rollout | ⬜ |
 
@@ -199,6 +205,9 @@ sjacsoaa.ca@gmail.com
 | Aug 2026 | Removed `data/events.json`; corrected README's stale claims about it being fetched at runtime, and its references to removed `about.html`/`events.html` | Repo-wide grep confirmed the file had zero code references — eliminates dead duplicate data and inaccurate documentation |
 | Aug 2026 | Kept `data/directory.json` despite having the same dead-duplicate characteristic as `events.json` | Directory data collection (board, then wider membership) is actively in progress; the file is useful as a staging/reference mirror during that process — revisit once collection wraps up |
 | Aug 2026 | This PROJECT.md committed to the GitHub repo for the first time | Previously existed only as a Claude Project upload — not durable |
+| Aug 2026 | Added New Horizon Charity Table Tennis Tournament 2026 event, 7 photos | SJACS Alumni finished 2nd (Silver) in the Inter-School Team event, 7 schools competing |
+| Aug 2026 | Confirmed homepage "3 most recent" event logic is fully automatic (sorted by dateISO, no manual flags) | Resolves prior open question in Constraints & Risks |
+| Aug 2026 | Used Pillow instead of ImageMagick for New Horizon 2026 image optimization | ImageMagick unavailable via sudo in this shell session; Pillow reproduced identical settings |
 
 ---
 
@@ -206,7 +215,7 @@ sjacsoaa.ca@gmail.com
 
 *(As of April 2026 — due for a fresh check given ~4 months have passed)*
 
-Canonical URLs (`/`, `/gallery`, `/directory`) are what's indexed; `.html` variants 307-redirect. Sitemap `lastmod` for `/` and `/gallery` updated to 2026-08-05 alongside the golf tournament event. See prior watch list re: backlinks from sjacs.com, sjacs-van.com, hkjsaa.blogspot.com if `/gallery` or `/directory` are still showing as under-indexed — worth a fresh Search Console check now that time has passed.
+Canonical URLs (`/`, `/gallery`, `/directory`) are what's indexed; `.html` variants 307-redirect. Sitemap `lastmod` for `/` and `/gallery` updated to 2026-08-19 alongside the New Horizon 2026 event. See prior watch list re: backlinks from sjacs.com, sjacs-van.com, hkjsaa.blogspot.com if `/gallery` or `/directory` are still showing as under-indexed — worth a fresh Search Console check now that time has passed.
 
 ---
 
