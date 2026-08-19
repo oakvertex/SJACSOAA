@@ -136,7 +136,7 @@ sjacsoaa.ca@gmail.com
 |---|---|
 | Hero image | ✅ `images/hero.jpg` |
 | School logo / crest | ✅ `images/logo.png` (official) |
-| Event photos | ✅ `images/events/` — CNY 2026, AGM 2025, AGM 2024, Golf Tournament 2026 (9 photos), New Horizon 2026 (7 photos) |
+| Event photos | ✅ `images/events/` — inventory and captions per event live in EVENTS_DATA (js/main.js), not mirrored here |
 
 ---
 
@@ -196,6 +196,7 @@ sjacsoaa.ca@gmail.com
 | Aug 2026 | Confirmed homepage "3 most recent" event logic is fully automatic (sorted by dateISO, no manual flags) | Resolves prior open question in Constraints & Risks |
 | Aug 2026 | Used Pillow instead of ImageMagick for New Horizon 2026 image optimization | ImageMagick unavailable via sudo in this shell session; Pillow reproduced identical settings |
 | Aug 2026 | Trimmed Section 7 from a per-event content mirror to a system-level description | Event content in PROJECT.md was dead duplicate data with the same drift risk as the deleted events.json; js/main.js is now the sole source of truth for event content |
+| Aug 2026 | Trimmed Section 8's per-event photo listing to a system-level description | Same duplicate-content drift risk as Section 7 — EVENTS_DATA is the sole inventory source |
 
 ---
 
