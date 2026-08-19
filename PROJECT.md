@@ -86,20 +86,7 @@ Separate Pages
 
 ### Events
 
-| Event | Date | On homepage? |
-|---|---|---|
-| New Horizon Charity Table Tennis Tournament 2026 | 9 August 2026 | ✅ (most recent) |
-| Golf Tournament 2026 — Hong Kong Joint Schools Alumni Association | 26 July 2026 | ✅ |
-| CNY Celebration 2026 — Hong Kong Joint Schools Alumni Association | 2026 | ✅ |
-| SJACSOAA AGM Dinner | 18 October 2025 | ❌ (gallery only — bumped by the 3-most-recent rule) |
-| SJACSOAA AGM Dinner | 27 October 2024 | ❌ (gallery only — bumped by the 3-most-recent rule) |
-
-**Golf Tournament 2026 detail:** Held at Upper Unionville Golf Club, with dinner and award presentation at Purple Orchid the same evening. SJACS Alumni fielded a team of four — William Chow, Joe Chow, Eric Law and Johnson Yim. Results: Eric Law (Individual Strokeplay, 1st Runner-up; Closest to Pin, Hole 16), William Chow (Honest Individual Strokeplay Player). 9 photos.
-
-**New Horizon 2026 detail:** Held at Markham Wesley Centre (22 Esna Park Drive), the Canada-HK New Horizon Lions Club's 15th Annual Charity Table Tennis Tournament. SJACS Alumni competed in the Inter-School Team event against 7 schools, topped Group B (3-0), won the semifinal, and reached the Final — finishing 2nd overall (Silver) after a loss to Wah Yan College. 7 photos.
-
-### Gallery: Multi-Photo Events
-Each event can now have one or more photos, shown via a paging lightbox (prev/next buttons, arrow-key navigation, "N / M" counter, optional per-photo caption). Homepage event cards always show `photos[0]` as the thumbnail. Events with a single photo behave exactly as before — no visible change for CNY 2026 or the AGM Dinners.
+Events use a multi-photo gallery with a paging lightbox (prev/next, counter, optional caption). Homepage shows the 3 most recent events, sorted by dateISO descending — confirmed fully automatic, no manual per-event flags. Event content (titles, dates, descriptions, photos) lives entirely in EVENTS_DATA in js/main.js — that is the single source of truth; this document does not mirror it.
 
 ### Useful Links
 Two categories, responsive card grid:
@@ -205,9 +192,10 @@ sjacsoaa.ca@gmail.com
 | Aug 2026 | Removed `data/events.json`; corrected README's stale claims about it being fetched at runtime, and its references to removed `about.html`/`events.html` | Repo-wide grep confirmed the file had zero code references — eliminates dead duplicate data and inaccurate documentation |
 | Aug 2026 | Kept `data/directory.json` despite having the same dead-duplicate characteristic as `events.json` | Directory data collection (board, then wider membership) is actively in progress; the file is useful as a staging/reference mirror during that process — revisit once collection wraps up |
 | Aug 2026 | This PROJECT.md committed to the GitHub repo for the first time | Previously existed only as a Claude Project upload — not durable |
-| Aug 2026 | Added New Horizon Charity Table Tennis Tournament 2026 event, 7 photos | SJACS Alumni finished 2nd (Silver) in the Inter-School Team event, 7 schools competing |
+| Aug 2026 | Added New Horizon Charity Table Tennis Tournament 2026 event (7 photos) | Content lives in EVENTS_DATA; see live site for details |
 | Aug 2026 | Confirmed homepage "3 most recent" event logic is fully automatic (sorted by dateISO, no manual flags) | Resolves prior open question in Constraints & Risks |
 | Aug 2026 | Used Pillow instead of ImageMagick for New Horizon 2026 image optimization | ImageMagick unavailable via sudo in this shell session; Pillow reproduced identical settings |
+| Aug 2026 | Trimmed Section 7 from a per-event content mirror to a system-level description | Event content in PROJECT.md was dead duplicate data with the same drift risk as the deleted events.json; js/main.js is now the sole source of truth for event content |
 
 ---
 
